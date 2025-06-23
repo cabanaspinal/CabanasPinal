@@ -1,0 +1,435 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+body {
+    background: url('imagenes/textura-madera.jpg');
+    font-family: 'Georgia', serif;
+    background-repeat: repeat;
+    background-position: fixed;
+    background-size: 100%;
+    color: #3e2f1c;
+    width: 100%;
+    height: 1500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* HEADER */
+header {
+    background-color: rgba(255, 248, 220, 0.95);
+    background-size: cover;
+    color: white;
+    width: 90%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    border-top: 20px solid #6b4226 ;
+    
+}
+.logo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content_ButonH {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-right: 20px;
+}
+
+ button {
+    background-color: #8b5e3c;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #a47148;
+    border-radius: 100px;
+}
+
+/* MAIN */
+main {
+    margin-top: 5px;
+    background-color: rgba(255, 248, 220, 0.95); /* crema claro */
+    width: 90%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.conten_imganima {
+    margin-top: 10px;
+    width: 100%;
+    height: 30%;
+    background-color: #3e2f1c;
+    background: url('imagenes/cabana1.jpg') center/cover no-repeat;
+}
+
+.conten_infoCabañas {
+    width: 90%;
+    height: 60%;
+    margin-top: 10px;
+    background-color: #fdf5e6;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+.Cab1,
+.Cab2{
+    background-color: #deb887;
+    border: 2px solid #8b5e3c;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Cab1 h1,
+.Cab2 h1{
+    font-size: 20px;
+    height: 10%;
+    text-decoration: overline solid;
+    text-shadow : 43px  16px  13px  #8b5e3c ;
+}
+.contenINF{
+    background-color: #d2b48c;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.IMGCAB1,
+.IMGCAB2{
+   
+    width: 100%;
+    height:50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.IMGCAB1{background-image: url(imagenes/frenteCabaña.jpg);}
+.IMGCAB2{background-image: url(imagenes/frenteCasa.jpg);}
+.InfCab1,
+.InfCab2{
+    
+    width: 100%;
+    height: 50%;
+    word-break: break-word;
+    overflow-y: auto; 
+    padding-right: 10px;
+    scroll-behavior: smooth;
+    
+}
+.InfCab1 p,
+.InfCab2 p {
+    background-color: rgba(250, 235, 215, 0.9);
+    color: #3e2f1c;
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    padding: 10px 15px;
+    margin-top: 0px;
+    border-bottom: transparent;
+    border-left: 5px solid #8b5e3c;
+    border-radius: 0px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    box-sizing: border-box;
+}
+.MasInvoC1, .MasInvoC2, .MasInvoC3 {
+    height: 60%;
+    align-self: center; 
+    background-color: #8b5e3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: block;
+     margin: 15px auto 0 auto;
+}
+
+.MasInvoC1:hover {
+    background-color: #a47148;
+    transform: scale(1.05);
+}
+/* MAPA */
+.content_mapa {
+    width: 89%;
+    height: 20%;
+    margin-top: 15px;
+    background-color: #d2b48c;
+    padding: 10px;
+    border-radius: 10px;
+}
+.content_mapa h3 {
+    color: #3e2f1c;
+}
+
+/* FOOTER */
+footer {
+    width: 90%;
+    height: 5%;
+    background-color: #6b4226;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-top: 5px ;
+}
+
+/* LOGO */
+.LogoH {
+    height: 99%;
+    width: 100%;
+    background-image: url(imagenes/Logo.webp);
+    background-size: 20%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.conten_imganima {
+    position: relative;
+    width: 100%;
+    height: 30%;
+    overflow: hidden;
+    background: none;
+}
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 100%;  
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+    transform: scale(0.6);
+}
+.slide.active {
+     z-index: 1;
+    pointer-events: auto;
+    animation: showAnim 4s ease forwards;
+}
+.slide.showing {
+    z-index: 1;
+    animation: showAnim 2s ease forwards;
+}
+.slide.hiding {
+    z-index: 0;
+    animation: hideAnim 2s ease forwards;
+}
+/* Entrada*/
+@keyframes showAnim {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* Salida */
+@keyframes hideAnim {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+}
+
+
+.slide img {
+    width: 60%;
+    height: 100%;
+    object-fit: 100%;
+    border-radius: 5px;
+}
+.conten_infoCabañas img{
+    height: 200px;
+    width: 250px ;
+}
+.InfCa1{
+    width: 100%;
+    height: 500%;
+}
+@media (max-width: 1024px) {
+    body {
+        height: auto;
+    }
+
+    header, main, footer, .content_mapa {
+        width: 95%;
+    }
+    header{
+        height: 125px;
+    }
+    .logo {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .LogoH {
+        width: 150px;
+        height: 150px;
+        background-size: contain;
+    }
+
+    .content_ButonH {
+        flex-wrap: wrap;
+        gap: 5px;
+        padding: 10px;
+    }
+
+    .conten_infoCabañas {
+        flex-direction: column;
+        align-items: center;
+        height: 650px;
+        margin: 50px;
+    }
+
+    .Cab1, .Cab2 {
+        width: 90%;
+        height: 50%;
+        margin-bottom: 15px;
+    }
+
+    .conten_imganima {
+        height: 250px;
+    }
+    .IMGCAB1, .IMGCAB2{
+        width: 60%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .slide img {
+        width: 190%;
+        object-fit: contain;
+        display: block;
+    }
+
+    .conten_infoCabañas img {
+        width: 100%;
+        height: auto;
+         object-fit: contain;
+    }
+
+    .InfCa1, .InfCa2 {
+        height: auto;
+        padding: 10px;
+    }
+
+    .content_mapa {
+        height: auto;
+    }
+
+    footer {
+        height: auto;
+        padding: 10px;
+    }
+    .MasInvoC1, .MasInvoC2, .MasInvoC3{
+        height: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .LogoH {
+        width: 120px;
+        height: 120px;
+    }
+
+    header button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .conten_imganima {
+        height: 180px;
+    }
+
+    .slide img {
+        width: 95%;
+    }
+
+    .Cab1, .Cab2 {
+        width: 100%;
+        
+    }
+
+    .conten_infoCabañas img {
+        height: 180px;
+    }
+}
+
+* {
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    body.fade-out {
+      opacity: 0;
+    }
+    @keyframes myAnim {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(0.6);
+	}
+}
+
+
+.animate-out {
+  animation: myAnim 3s ease 0s 1 alternate backwards;
+}
+.BTNMA{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+}

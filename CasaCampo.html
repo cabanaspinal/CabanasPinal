@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleCampo.css">
+    <title>Cabañas Pinal</title>
+</head>
+<body>
+    <header class="cabeza">
+        <section class="logo">
+            <a href="index.html" class="LogoH"></a>
+        </section>
+        <section class="content_ButonH">
+            <a class="" href="index.html">Inicio</a>
+            <a class="Reserva" id="btnFijo" onclick="enviarWhatsApp()"> Reservar</a>
+            
+        </section>
+    </header>
+    <main class="Cuerpo">
+                   <h1>¡CASA DE CAMPO!</h1>                
+                    <section class="c">
+                        <section class="IMGCAB1"></section>
+                    <section class="InfCab1">
+                             <p>* Cuenta con 3 Habitaciones Pequeñas, 4 Camas Matrimoniales.</p>
+                           <p>* Sala con Chimenea, se Incluye una carga de leña por noche. </p>
+                            <p>* Tambien Cuneta Con:</p>
+                            <p>* Una Cocina Pequeña Con lo Básico: Parrilla Electrónica de 2 Quemadores,Refrigerador, Cafetera, Licuadora y Utensilios.</p>
+
+                        
+                        
+                            <p>*  Baño con Agua Caliente.</p>
+
+                            <p>*  Internet y TV con Cable.</p>
+
+                            <p>*  Asador y Área Pequeña para Fogata.</p> 
+                             <p >*  Estacionamiento para un carro, en estacionamiento está fuera del establecimiento pero es totalmente seguro con cámara de seguridad las 24 horas.</p>
+                              <p>NOTA: Favor De Avisar Si Traen Mas De 1 Carro!</p> 
+                            </section> 
+                    </section>
+                    <h2>Fotos y Videos</h2>
+                    <section class="IMGVID">
+  <section class="slider-container">
+    <button class="nav-btn prev" id="prevBtn">&#10094;</button>
+    
+    <div class="slider" id="slider">
+      <div class="slide-track" id="slide-track">
+        <div class="slide"><img src="imagenes/Campo/img1.jpg" /></div>
+        <div class="slide"><img src="imagenes/Campo/img2.jpg" /></div>
+        <div class="slide"><img src="imagenes/Campo/img3.jpg" /></div>
+        <div class="slide"><img src="imagenes/Campo/img4.jpg" /></div>
+        <div class="slide"><img src="imagenes/Campo/img5.jpg" /></div>
+        <div class="slide"><img src="imagenes/Campo/img6.jpg" /></div>
+        <div class="slide"><img src="imagenes/Campo/img7.jpg" /></div>
+        <div class="slide"><img src="imagenes/cabana4.jpg" /></div>
+      </div>
+    </div>
+
+    <button class="nav-btn next" id="nextBtn">&#10095;</button>
+  </section>
+</section>
+                    
+
+    </main>
+    <footer class="Pie">
+        <center>Copyright © 2025 Cabañas Pinal - Todos los derechos reservados.</center>
+    </ooter>
+</body>
+<script>
+  function enviarWhatsApp() {
+    const continuar = confirm("¿Quieres enviar un mensaje para reservar por WhatsApp?");
+    if (!continuar) return;
+
+    const nombre = prompt("Por favor, ingresa tu nombre:");
+    if (!nombre || nombre.trim() === "") {
+      alert("Debes ingresar tu nombre.");
+      return;
+    }
+
+    const fecha = prompt("¿Qué fecha quieres reservar? (ejemplo: 25 de julio de 2025)");
+    if (!fecha || fecha.trim() === "") {
+      alert("Debes ingresar una fecha.");
+      return;
+    }
+
+
+    const numero = '4411039625';
+    const mensaje = encodeURIComponent(`Hola, soy ${nombre}. Quisiera reservar la Casa de Campo el dia: ${fecha}. ¿Estará disponible?`);
+    const url = `https://wa.me/${numero}?text=${mensaje}`;
+
+    window.open(url, '_blank'); 
+  }
+</script>
+<script>
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('btnFijo');
+    if (window.scrollY > 100) {
+      btn.classList.add('btn-movido');
+    } else {
+      btn.classList.remove('btn-movido');
+    }
+  });
+</script>
+<script>
+  const track = document.getElementById('slide-track');
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  let index = 0;
+
+  const setPositionByIndex = () => {
+    const slideWidth = slides[0].offsetWidth;
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+  };
+
+  
+  prevBtn.addEventListener('click', () => {
+    if (index > 0) index--;
+    setPositionByIndex();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (index < slides.length - 1) index++;
+    setPositionByIndex();
+  });
+
+
+  let isDragging = false;
+  let startX = 0;
+  let currentTranslate = 0;
+
+  const touchStart = (x) => {
+    isDragging = true;
+    startX = x;
+    currentTranslate = -index * slides[0].offsetWidth;
+  };
+
+  const touchMove = (x) => {
+    if (!isDragging) return;
+    const deltaX = x - startX;
+    track.style.transform = `translateX(${currentTranslate + deltaX}px)`;
+  };
+
+  const touchEnd = (x) => {
+    if (!isDragging) return;
+    const deltaX = x - startX;
+    const threshold = slides[0].offsetWidth * 0.25;
+
+    if (deltaX > threshold && index > 0) index--;
+    else if (deltaX < -threshold && index < slides.length - 1) index++;
+
+    setPositionByIndex();
+    isDragging = false;
+  };
+
+  
+  track.addEventListener('mousedown', e => touchStart(e.clientX));
+  track.addEventListener('mousemove', e => touchMove(e.clientX));
+  track.addEventListener('mouseup', e => touchEnd(e.clientX));
+  track.addEventListener('mouseleave', e => touchEnd(e.clientX));
+
+  
+  track.addEventListener('touchstart', e => touchStart(e.touches[0].clientX));
+  track.addEventListener('touchmove', e => touchMove(e.touches[0].clientX));
+  track.addEventListener('touchend', e => touchEnd(e.changedTouches[0].clientX));
+
+  
+  window.addEventListener('resize', setPositionByIndex);
+
+ 
+  setPositionByIndex();
+  setInterval(() => {
+  index = (index + 1) % slides.length; 
+  setPositionByIndex();
+}, 10000); 
+</script>
+</html>

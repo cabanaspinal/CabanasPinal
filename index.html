@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="indexStyle.css">
+    <title>Cabañas Pinal</title>
+</head>
+<body>
+    <header >
+        <section class="logo">
+            <a href="index.html" class="LogoH"></a>
+        </section>
+        <section class="content_ButonH">
+            
+        </section>
+    </header>
+    
+    <main>
+
+        <section class="conten_imganima">
+                <div class="slideshow" id="slider">
+                <div class="slide">
+                    <img src="imagenes/cabana1.jpg" alt="Cabaña 1">
+                </div>
+                <div class="slide">
+                    <img src="imagenes/cabana2.jpg" alt="Cabaña 2">
+                </div>
+                <div class="slide">
+                    <img src="imagenes/cabana3.jpg" alt="Cabaña 3">
+                </div>
+                <div class="slide">
+                    <img src="imagenes/cabana4.jpg" alt="Cabaña 4">
+                </div>
+                <div class="slide">
+                    <img src="imagenes/cabana5.jpg" alt="Cabaña 5">
+                </div>
+                <div class="slide">
+                    <img src="imagenes/cabana6.jpg" alt="Cabaña 6">
+                </div>
+                <div class="slide">
+                    <img src="imagenes/cabana7.jpg" alt="Cabaña 7">
+                </div>
+                </div>
+        </section>
+        
+        
+        <section class="conten_infoCabañas">
+            <section class="Cab1">
+                <h1>¡CABAÑA DE MADERA!</h1>
+                <section class="contenINF">
+                    <section class="IMGCAB1"></section>
+                    <section class="InfCab1">
+                        <p>
+                           *  Cuenta Con Un Cuarto Principal Con Cama King Size,  Pichonera Tipo Tapanco con 2 Matrimoniales.</p>
+                           <p>Ademas De Contar Con todo </p>
+                            <p>* Baño con Agua Caliente</p>
+
+                            <p>* Cocina Pequeña con lo Básico: Parrilla Eléctrica de 2 Quemadores, Frigobar, Cafetera, Horno de Microondas, Licuadora y Utensilios.</p>
+
+                            <p>*  Comedor.</p>
+
+                            <p>*  Sala con Chimenea, Incluye una Carga de Leña por Noche.</p>
+
+                            <p>*  Internet y TV con Cable</p>
+
+                            <p>*  Asador y Área Pequeña para Fogata.</p>
+
+                            <p>*  Estacionamiento para un carro, en estacionamiento está fuera del establecimiento pero es totalmente seguro con cámara de seguridad las 24 horas.</p>
+                            <p>NOTA: Favor De Avisar Si Traen Mas De 1 Carro!</p> 
+                            
+                    </section>
+                    
+                </section >
+                <section class="BTNMA"><button class="MasInvoC1" onclick="location.href='CabañaMadera.html'">Ver Mas</button>
+                <button class="MasInvoC2" onclick="enviarWhatsAppCabaña()">Reservar Ahora</button></section>
+            </section>
+            <section class="Cab2">
+                <h1>¡CASA DE CAMPO!</h1>
+                 <section class="contenINF">
+                    <section class="IMGCAB2"></section>
+                    <section class="InfCab2">
+                        <p>* Cuenta con 3 Habitaciones Pequeñas, 4 Camas Matrimoniales. </p>
+                        <p>* Sala con Chimenea, se Incluye una carga de leña por noche.</p>
+                        <p>* Cocina Pequeña con lo Básico: Parrilla Electrónica de 2 Quemadores,Refrigerador, Cafetera, Licuadora y Utensilios. </p>
+                        <p>* Baño con Agua Caliente.</p>
+                        <p>* Internet y TV con Cable.</p>
+                        <p>* Asador, Área para Fogata.</p>
+                        <p>* Estacionamiento para un carro, el estacionamiento queda fuera del establecimiento, pero es seguro tiene cámara de seguridad las 24 horas.</p>
+                        <p>NOTA: Favor De Avisar Si Traen Mas De 1 Carro!</p> 
+                    </section>
+                    
+                </section>
+                <section class="BTNMA"><button class="MasInvoC1" onclick="location.href='CasaCampo.html'">Ver Mas</button>
+                <button class="MasInvoC3" onclick="enviarWhatsAppCasaCampo()">Reservar Ahora</button></section>
+            </section>
+        </section>
+        
+        <section class="content_mapa">
+           <center> <h1>¡UBICACIÓN!</h1></center>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1460.9725802033215!2d-99.63321476195395!3d21.133192485920613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6c9209d189538c9%3A0x9e5d5f3227741d53!2sCaba%C3%B1as%20Pinal%2C%20Casa%20de%20Campo!5e1!3m2!1ses!2smx!4v1750275933520!5m2!1ses!2smx" width="100%" height="90%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </main>
+
+    <footer>
+        <section class="pie">
+            <center>Copyright © 2025 Cabañas Pinal - Todos los derechos reservados.</center>
+        </section>
+    </footer>
+</body>
+<script>
+    const slides = document.querySelectorAll('#slider .slide');
+    let currentIndex = 0;
+
+    function showSlide(nextIndex) {
+        if (nextIndex === currentIndex) return;
+
+        const currentSlide = slides[currentIndex];
+        const nextSlide = slides[nextIndex];
+
+        currentSlide.classList.remove('showing');
+        currentSlide.classList.add('hiding');
+
+        nextSlide.classList.remove('hiding');
+        nextSlide.classList.add('showing');
+
+        currentIndex = nextIndex;
+    }
+
+    function nextSlide() {
+        const nextIndex = (currentIndex + 1) % slides.length;
+        showSlide(nextIndex);
+    }
+
+    // Inicial
+    slides[currentIndex].classList.add('showing');
+
+    setInterval(nextSlide, 4000);
+</script>
+<script>
+  function enviarWhatsAppCasaCampo() {
+    const continuar = confirm("¿Quieres enviar un mensaje para reservar por WhatsApp?");
+    if (!continuar) return;
+
+    const nombre = prompt("Por favor, ingresa tu nombre:");
+    if (!nombre || nombre.trim() === "") {
+      alert("Debes ingresar tu nombre.");
+      return;
+    }
+
+    const fecha = prompt("¿Qué fecha quieres reservar? (ejemplo: 25 de julio de 2025)");
+    if (!fecha || fecha.trim() === "") {
+      alert("Debes ingresar una fecha.");
+      return;
+    }
+
+
+    const numero = '4411039625';
+    const mensaje = encodeURIComponent(`Hola, soy ${nombre}. Quisiera reservar la Casa de Campo el dia: ${fecha}. ¿Estará disponible?`);
+    const url = `https://wa.me/${numero}?text=${mensaje}`;
+
+    window.open(url, '_blank'); 
+  }
+</script>
+<script>
+  function enviarWhatsAppCabaña() {
+    const continuar = confirm("¿Quieres enviar un mensaje para reservar por WhatsApp?");
+    if (!continuar) return;
+
+    const nombre = prompt("Por favor, ingresa tu nombre:");
+    if (!nombre || nombre.trim() === "") {
+      alert("Debes ingresar tu nombre.");
+      return;
+    }
+
+    const fecha = prompt("¿Qué fecha quieres reservar? (ejemplo: 25 de julio de 2025)");
+    if (!fecha || fecha.trim() === "") {
+      alert("Debes ingresar una fecha.");
+      return;
+    }
+
+
+    const numero = '4411039625';
+    const mensaje = encodeURIComponent(`Hola, soy ${nombre}. Quisiera reservar la Cabaña de Madera el dia: ${fecha}. ¿Estará disponible?`);
+    const url = `https://wa.me/${numero}?text=${mensaje}`;
+
+    window.open(url, '_blank'); 
+  }
+</script>
+ 
+</html>
