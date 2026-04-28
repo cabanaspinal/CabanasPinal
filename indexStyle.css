@@ -109,9 +109,9 @@ main {
 }
 .Cab1 h1,
 .Cab2 h1{
-    font-size: 20px;
+    font-size: 25px;
     height: 10%;
-    text-decoration: overline solid;
+   
     text-shadow : 43px  16px  13px  #8b5e3c ;
 }
 .contenINF{
@@ -432,4 +432,63 @@ footer {
     height: 10%;
     display: flex;
     flex-direction: row;
+}
+.normas-container {
+    width: 90%;
+    background-color: #fdf5e6; /* Tono crema como tus secciones actuales */
+    /* border-left: 10px solid #6b4226; Borde café oscuro */
+    margin: 20px 0;
+    /* padding: 20px; */
+    
+}
+
+.normas-container h2 {
+    color: #3e2f1c;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.normas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-around;
+}
+
+.norma-item {
+    background-color: rgba(222, 184, 135, 0.3); /* Color madera claro */
+    padding: 15px;
+    border-radius: 8px;
+    width: 45%;
+    min-width: 280px;
+    font-family: 'Georgia', serif;
+}
+
+.norma-item ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.damage {
+    border: 1px dashed #8b5e3c;
+    font-style: italic;
+    color: #b22222; /* Rojo oscuro para resaltar advertencia */
+}
+@media (max-width: 600px) {
+    .normas-container {
+        width: 85%; /* Ajusta el ancho para que no se salga de la pantalla */
+        height: auto; /* IMPORTANTE: Deja que el contenido defina el largo */
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    .norma-item {
+        width: 100% !important; /* En celular, que cada norma ocupe todo el ancho */
+        margin-bottom: 10px;
+    }
+
+    /* Ajuste para el body que tiene altura fija */
+    body {
+        height: auto; /* Esto evita que el contenido se corte al final */
+    }
 }
